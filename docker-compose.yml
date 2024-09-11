@@ -4,7 +4,7 @@ services:
   flask-app:
     build: .
     ports:
-      - "80:80"
+      - "8777:80"
     volumes:
       - ./Scores.txt:/Scores.txt
     environment:

@@ -6,7 +6,7 @@ import time
 def test_scores_service(url):
     try:
         # Initialize the browser
-        driver = webdriver.Chrome()  # Make sure you have the ChromeDriver installed
+        driver = webdriver.Chrome()
         driver.get(url)
 
         # Wait for the page to load
@@ -30,7 +30,7 @@ def test_scores_service(url):
 
 # Main function to call the test function and exit accordingly
 def main_function():
-    url = "http://localhost:80"  # Change to the URL of your Flask app
+    url = "http://localhost:8777"
     result = test_scores_service(url)
 
     # Return -1 if the test fails, 0 if the test passes
