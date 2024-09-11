@@ -1,0 +1,1 @@
+docker run -d -p 8777:80 -v $(pwd)/Scores.txt:/Scores.txt skvyaroslav/worldofgames:latest
