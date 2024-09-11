@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    docker.build('worldofgames:latest')
+                    docker.build('skvyaroslav/worldofgames:latest')
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         stage('Run') {
             steps {
                 script {
-                    docker.image('worldofgames:latest').run('-p 8777:80 -v $PWD/Scores.txt:/Scores.txt')
+                    docker.image('skvyaroslav/worldofgames:latest').run('-p 8777:80 -v $PWD/Scores.txt:/Scores.txt')
                 }
             }
         }
@@ -40,7 +40,7 @@ pipeline {
         stage('Finalize') {
             steps {
                 script {
-                    sh 'docker stop $(docker ps -q --filter ancestor=worldofgames:latest)'
+                    sh 'docker stop $(docker ps -q --filter ancestor=skvyaroslav/worldofgames:latest)'
                     sh 'docker push skvyaroslav/worldofgames:latest'
                 }
             }
